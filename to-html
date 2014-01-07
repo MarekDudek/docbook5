@@ -1,0 +1,6 @@
+#! /bin/bash
+
+FILE_PATH=${1}
+HTML_FILE_PATH=${FILE_PATH}.html
+
+xsltproc /usr/share/xml/docbook/stylesheet/docbook-xsl-ns/html/docbook.xsl ${FILE_PATH} > ${HTML_FILE_PATH}
