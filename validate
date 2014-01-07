@@ -1,0 +1,6 @@
+#! /bin/bash
+
+FILE_PATH=${1}
+
+echo Validating ${FILE_PATH} ...
+xmlstarlet val --err --xsd /usr/share/xml/docbook/schema/xsd/5.0/docbook.xsd ${FILE_PATH}
