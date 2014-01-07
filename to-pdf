@@ -1,0 +1,8 @@
+#! /bin/bash
+
+FILE_PATH=${1}
+FO_FILE_PATH=${FILE_PATH}.fo
+PDF_FILE_PATH=${FILE_PATH}.pdf
+
+xsltproc /usr/share/xml/docbook/stylesheet/docbook-xsl-ns/fo/docbook.xsl ${FILE_PATH} > ${FO_FILE_PATH}
+fop -fo ${FO_FILE_PATH} -pdf ${PDF_FILE_PATH}
