@@ -1,8 +1,23 @@
 #! /bin/bash
 
-FILE_PATH=${1}
-FO_FILE_PATH=${FILE_PATH}.fo
-PDF_FILE_PATH=${FILE_PATH}.pdf
+ARG_COUNT=$#
 
-xsltproc /usr/share/xml/docbook/stylesheet/docbook-xsl-ns/fo/docbook.xsl ${FILE_PATH} > ${FO_FILE_PATH}
-fop -fo ${FO_FILE_PATH} -pdf ${PDF_FILE_PATH}
+if [[ ${ARG_COUNT} -eq 0 ]]; then
+	echo File name not specified!
+	exit 1
+fi
+
+FILE=${1}
+
+if [ ! -f ${FILE} ]; then
+	echo File ${FILE} does not exist!
+	exit 1
+fi
+
+FILE_NO_EXT=${FILE%.*}
+
+FO_FILE=${FILE_NO_EXT}.fo
+PDF_FILE=${FILE_NO_EXT}.pdf
+
+xsltproc /usr/share/xml/docbook/stylesheet/docbook-xsl-ns/fo/docbook.xsl ${FILE} > ${FO_FILE}
+fop -fo ${FO_FILE} -pdf ${PDF_FILE}
