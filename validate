@@ -1,6 +1,17 @@
 #! /bin/bash
 
-FILE_PATH=${1}
+ARG_COUNT=$#
 
-echo Validating ${FILE_PATH} ...
-xmlstarlet val --err --xsd /usr/share/xml/docbook/schema/xsd/5.0/docbook.xsd ${FILE_PATH}
+if [[ ${ARG_COUNT} -eq 0 ]]; then
+	echo File name not specified!
+	exit 1
+fi
+
+FILE=${1}
+
+if [ ! -f ${FILE} ]; then
+	echo File ${FILE} does not exist!
+	exit 1
+fi
+
+xmlstarlet val --err --xsd /usr/share/xml/docbook/schema/xsd/5.0/docbook.xsd ${FILE}
