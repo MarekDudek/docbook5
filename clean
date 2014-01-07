@@ -1,3 +1,5 @@
 #! /bin/bash
 
-rm -f ./*.fo ./*.pdf ./*.html
+rm -f ./*.fo 
+rm -f ./*.pdf 
+rm -f ./*.html
