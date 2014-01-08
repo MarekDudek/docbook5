@@ -2,13 +2,8 @@
 
 SCRIPT_DIR=`dirname $0`
 source ${SCRIPT_DIR}/common-functions
+
 exit_if_no_arguments $#
-
-FILE=${1}
-
-if [ ! -f ${FILE} ]; then
-	echo File ${FILE} does not exist!
-	exit 1
-fi
+exit_if_file_does_not_exist $1
 
 xmlstarlet val --err --xsd /usr/share/xml/docbook/schema/xsd/5.0/docbook.xsd ${FILE}

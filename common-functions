@@ -1,11 +1,17 @@
 #! /bin/bash
 
-echo Importing common functions
-
 exit_if_no_arguments() {
 	NUMBER_OF_ARGUMENTS=$1
 	if [[ ${NUMBER_OF_ARGUMENTS} -eq 0 ]]; then
 		echo No argument specified!
+		exit 1
+	fi
+}
+
+exit_if_file_does_not_exist() {
+	FILE=$1
+	if [ ! -f ${FILE} ]; then
+		echo File $FILE does not exist!
 		exit 1
 	fi
 }

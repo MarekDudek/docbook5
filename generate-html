@@ -2,14 +2,9 @@
 
 SCRIPT_DIR=`dirname $0`
 source ${SCRIPT_DIR}/common-functions
+
 exit_if_no_arguments $#
-
-FILE=${1}
-
-if [ ! -f ${FILE} ]; then
-	echo File ${FILE} does not exist!
-	exit 1
-fi
+exit_if_file_does_not_exist $1
 
 FILE_NO_EXT=${FILE%.*}
 HTML_FILE=${FILE_NO_EXT}.html
