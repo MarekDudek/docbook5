@@ -1,11 +1,8 @@
 #! /bin/bash
 
-ARG_COUNT=$#
-
-if [[ ${ARG_COUNT} -eq 0 ]]; then
-	echo File name not specified!
-	exit 1
-fi
+SCRIPT_DIR=`dirname $0`
+source ${SCRIPT_DIR}/common-functions
+exit_if_no_arguments $#
 
 FILE=${1}
 

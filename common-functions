@@ -1,0 +1,11 @@
+#! /bin/bash
+
+echo Importing common functions
+
+exit_if_no_arguments() {
+	NUMBER_OF_ARGUMENTS=$1
+	if [[ ${NUMBER_OF_ARGUMENTS} -eq 0 ]]; then
+		echo No argument specified!
+		exit 1
+	fi
+}
