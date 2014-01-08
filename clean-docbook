@@ -1,5 +1,7 @@
 #! /bin/bash
 
-rm -f ./*.fo 
-rm -f ./*.pdf 
-rm -f ./*.html
+COMMAND="rm -fv"
+
+${COMMAND} ./*.fo 
+${COMMAND} ./*.pdf 
+${COMMAND} ./*.html

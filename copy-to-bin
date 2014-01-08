@@ -1,0 +1,9 @@
+#! /bin/bash
+
+DEST=~/bin
+COPY_COMMAND="cp -v"
+
+${COPY_COMMAND} ./validate-docbook 	${DEST}
+${COPY_COMMAND} ./generate-html	${DEST}
+${COPY_COMMAND} ./generate-pdf 	${DEST}
+${COPY_COMMAND} ./clean-docbook 	${DEST}
