@@ -1,0 +1,23 @@
+#! /bin/bash
+
+# Import common functions
+SCRIPT_DIR=`dirname $0`
+source ${SCRIPT_DIR}/common-functions
+
+# Validate input
+exit_if_no_arguments $#
+INPUT_FILE=$1
+exit_if_file_does_not_exist $INPUT_FILE
+
+# Clean
+$SCRIPT_DIR/clean-docbook
+
+# Validate
+$SCRIPT_DIR/validate-docbook $INPUT_FILE
+if [[ ! $? -eq 0 ]]; then
+	echo Validation failed!
+fi
+
+# Generate all formats
+$SCRIPT_DIR/generate-html $INPUT_FILE
+$SCRIPT_DIR/generate-pdf  $INPUT_FILE

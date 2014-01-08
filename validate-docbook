@@ -1,9 +1,12 @@
 #! /bin/bash
 
+# Import common functions
 SCRIPT_DIR=`dirname $0`
 source ${SCRIPT_DIR}/common-functions
 
+# Validate input
 exit_if_no_arguments $#
 exit_if_file_does_not_exist $1
 
+# Validate file
 xmlstarlet val --err --xsd /usr/share/xml/docbook/schema/xsd/5.0/docbook.xsd ${FILE}

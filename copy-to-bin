@@ -7,4 +7,6 @@ ${COPY_COMMAND} ./common-functions	${DEST}
 ${COPY_COMMAND} ./validate-docbook	${DEST}
 ${COPY_COMMAND} ./generate-html		${DEST}
 ${COPY_COMMAND} ./generate-pdf 		${DEST}
+${COPY_COMMAND} ./generate-all 		${DEST}
 ${COPY_COMMAND} ./clean-docbook 	${DEST}
+${COPY_COMMAND} ./copy-to-bin		${DEST}

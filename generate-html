@@ -1,12 +1,18 @@
 #! /bin/bash
 
+# Import common functions
 SCRIPT_DIR=`dirname $0`
 source ${SCRIPT_DIR}/common-functions
 
+# Validate input
 exit_if_no_arguments $#
-exit_if_file_does_not_exist $1
+INPUT_FILE=$1
+exit_if_file_does_not_exist $INPUT_FILE
 
-FILE_NO_EXT=${FILE%.*}
+# Prepare file names
+FILE_NO_EXT=${INPUT_FILE%.*}
 HTML_FILE=${FILE_NO_EXT}.html
 
-xsltproc /usr/share/xml/docbook/stylesheet/docbook-xsl-ns/html/docbook.xsl ${FILE} > ${HTML_FILE}
+# Generate
+echo Generating HTML from $INPUT_FILE
+xsltproc /usr/share/xml/docbook/stylesheet/docbook-xsl-ns/html/docbook.xsl $INPUT_FILE > $HTML_FILE
