@@ -21,5 +21,6 @@ if [[ ! $? -eq 0 ]]; then
 fi
 
 # Generate all formats
-$SCRIPT_DIR/generate-html $INPUT_FILE
-$SCRIPT_DIR/generate-pdf  $INPUT_FILE
+$SCRIPT_DIR/generate-html 	$INPUT_FILE
+$SCRIPT_DIR/generate-xhtml 	$INPUT_FILE
+$SCRIPT_DIR/generate-pdf  	$INPUT_FILE
