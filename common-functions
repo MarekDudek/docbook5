@@ -15,3 +15,8 @@ exit_if_file_does_not_exist() {
 		exit 1
 	fi
 }
+
+log() {
+	CONTENT=$1
+	echo ---- $CONTENT
+}

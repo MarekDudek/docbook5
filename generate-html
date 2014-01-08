@@ -14,5 +14,5 @@ FILE_NO_EXT=${INPUT_FILE%.*}
 HTML_FILE=${FILE_NO_EXT}.html
 
 # Generate
-echo Generating HTML from $INPUT_FILE
+log "Generating HTML from $INPUT_FILE"
 xsltproc /usr/share/xml/docbook/stylesheet/docbook-xsl-ns/html/docbook.xsl $INPUT_FILE > $HTML_FILE

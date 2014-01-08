@@ -15,6 +15,6 @@ FO_FILE=${FILE_NO_EXT}.fo
 PDF_FILE=${FILE_NO_EXT}.pdf
 
 # Generate
-echo Generating PDF from $INPUT_FILE
+log "Generating PDF from $INPUT_FILE"
 xsltproc /usr/share/xml/docbook/stylesheet/docbook-xsl-ns/fo/docbook.xsl $INPUT_FILE > $FO_FILE
 fop -fo $FO_FILE -pdf $PDF_FILE

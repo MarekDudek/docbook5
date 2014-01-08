@@ -13,9 +13,11 @@ exit_if_file_does_not_exist $INPUT_FILE
 $SCRIPT_DIR/clean-docbook
 
 # Validate
+log "Validating $INPUT_FILE"
 $SCRIPT_DIR/validate-docbook $INPUT_FILE
 if [[ ! $? -eq 0 ]]; then
-	echo Validation failed!
+	log "Validation failed!"
+	exit 1
 fi
 
 # Generate all formats

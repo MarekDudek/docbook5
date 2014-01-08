@@ -1,5 +1,11 @@
 #! /bin/bash
 
+# Import common functions
+SCRIPT_DIR=`dirname $0`
+source ${SCRIPT_DIR}/common-functions
+
+log "Cleaning"
+
 COMMAND="rm -fv"
 
 ${COMMAND} ./*.fo 
