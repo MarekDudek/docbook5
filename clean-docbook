@@ -11,3 +11,4 @@ COMMAND="rm -fv"
 ${COMMAND} ./*.fo 
 ${COMMAND} ./*.pdf 
 ${COMMAND} ./*.html
+${COMMAND} ./*.xhtml
