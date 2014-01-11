@@ -6,7 +6,8 @@ source ${SCRIPT_DIR}/common-functions
 
 # Validate input
 exit_if_no_arguments $#
-exit_if_file_does_not_exist $1
+INPUT_FILE=$1
+exit_if_file_does_not_exist $INPUT_FILE
 
 # Validate file
-xmlstarlet val --err --xsd /usr/share/xml/docbook/schema/xsd/5.0/docbook.xsd ${FILE}
+xmlstarlet val --err --xsd /usr/share/xml/docbook/schema/xsd/5.0/docbook.xsd $INPUT_FILE
