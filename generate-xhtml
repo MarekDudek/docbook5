@@ -15,4 +15,7 @@ HTML_FILE=${FILE_NO_EXT}.xhtml
 
 # Generate
 log "Generating XHTML from $INPUT_FILE"
-xsltproc /usr/share/xml/docbook/stylesheet/docbook-xsl-ns/xhtml/docbook.xsl $INPUT_FILE > $HTML_FILE
+xsltproc \
+	--output $HTML_FILE \
+	--stringparam toc.section.depth 5 \
+	/usr/share/xml/docbook/stylesheet/docbook-xsl-ns/xhtml/docbook.xsl $INPUT_FILE
